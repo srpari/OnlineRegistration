@@ -1,28 +1,22 @@
 import React from 'react'
-// import StepLinks from './StepLinks'
-import { useForm } from 'react-hook-form';
+import { BrowserRouter as Router, Switch, Route } from 'react-router-dom';
+import StepLinks from './StepLinks'
+import PersonalDetails from './PersonalDetails';
+import Programs from './Programs';
+import Subscription from './Subscription';
 
 function NewUserRegistration() {
-    const { handleSubmit, errors, register } =useForm();
-    
-    function onSubmit(data) {
-      alert("hi");
-      }
-    return (
-       <div className="signup-container">
-          {/* <h3>Please enter your details</h3>   */}
-        <form onSubmit={handleSubmit(onSubmit)} noValidate>            
-        <input type="text" name="fullname" placeholder="Firstname Lastname"
-         ref={register({ required: true })}/>
-        <p>{errors.name && 'Name is required.'}</p>
-        <input type="text" name="mobileno" placeholder="Mobile number"/>
-        <input type="text" name="email" type="email" placeholder="Email ID"/>
-        <input type="text" name="age" placeholder="Age"/>
-        {/* <input type="text" name="city" placeholder="City"/>
-        <input type="text" name="country" placeholder="Country"/>     */}
-        <input value="Next" type="submit"/>    
-        </form>
-       </div>
+     return (
+        <Router>
+          <div className="signup-container">
+          <StepLinks />         
+        <Switch>
+          <Route exact path='/' component={PersonalDetails}></Route> 
+          <Route path="/programs" component={Programs} ></Route>
+          <Route path="/subscription" component={Subscription} ></Route>
+        </Switch>
+        </div>
+        </Router> 
     )
 }
 
