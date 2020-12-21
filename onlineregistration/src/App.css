@@ -1,0 +1,73 @@
+.App {
+  background: #181a19;
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+
+* {
+  box-sizing: border-box;
+}
+
+body {
+  background-color: #302c27;
+  font-family: "Merriweather", serif;
+  color: #b2b6b9;
+}
+
+.signup-container {
+  min-width: 500px;
+  min-height: 500px;
+  position: relative;
+  /* background-color: #eb9123; */
+  padding-left: 20px;
+  font-size: 18px;
+}
+
+form {
+  color: #000;
+  background: #eb9123;
+  border-radius: 30px;
+  padding: 30px;
+  min-width: 500px;
+  min-height: 300px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+form p {
+  color: rgb(245, 240, 240);
+  margin-top: 2px;
+  margin-bottom: 10px;
+  padding-left: 8px;
+  font-size: 14px;
+  width: 100%;
+}
+
+input[type="submit"] {
+  color: #fff;
+  background: rgb(41, 39, 39);
+  font-size: 26px;
+}
+
+input[type="text"],
+input[type="email"] {
+  background-color: #fff;
+  font-size: 16px;
+}
+
+input[type="text"],
+input[type="email"],
+input[type="submit"] {
+  /* border: none; */
+  border-radius: 10px;
+  margin: 8px;
+  outline: none;
+  padding: 18px;
+  width: 95%;
+  transition: 0.3s ease all;
+  font-family: "Merriweather", serif;
+}
