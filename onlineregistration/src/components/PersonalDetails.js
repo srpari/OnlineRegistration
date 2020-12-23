@@ -1,18 +1,24 @@
-import React from 'react';
+import React, { useContext } from 'react';
 import { useForm } from 'react-hook-form';
 import Animator from './Animator';
 
+import { NewRegistrationContext } from './NewRegistrationContext.js';
+
 const PersonalDetails = () => {
     const { register, handleSubmit, errors } = useForm();
+    const { personal,setPersonal } =  useContext(NewRegistrationContext);
     
     function onSubmit(data) {
+      setPersonal(data);
      console.log("i am here  "+JSON.stringify(data) )
     }
 
     return ( 
           <Animator>
         <form onSubmit={handleSubmit(onSubmit)} noValidate>            
-        <input type="text" name="fullname" placeholder="Firstname Lastname"
+        <input type="text" name="fullname"
+         placeholder="Firstname Lastname"
+        //  defaultValue={personal.fullName}
          ref={register({ required: true })}/>
         <p>{errors.fullname && 'Name is required.'}</p>
         <input type="text" name="mobileno" placeholder="Mobile number" 

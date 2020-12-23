@@ -11,21 +11,39 @@ function Subscription() {
     return (
       <Animator>
       <form onSubmit={handleSubmit(onSubmit)} noValidate>            
-      <input type="text" name="fullname" placeholder="Firstname Lastname"
-       ref={register({ required: true })}/>
-      <p>{errors.fullname && 'Name is required.'}</p>
-      <input type="text" name="mobileno" placeholder="Mobile number" 
-      ref={register({ required: true })}/>
-      <p>{errors.mobileno && 'Mobile number is required.'}</p>
-      <input type="text" name="email" type="email" placeholder="Email ID" 
-      ref={register({ required: true })}/>
-      <p>{errors.email && 'Email is required.'}</p>
-      <input type="text" name="age" placeholder="Age"
-      ref={register({ required: true })}/>
-      <p>{errors.age && 'Age is required.'}</p>
-      {/* <input type="text" name="city" placeholder="City"/>
-      <input type="text" name="country" placeholder="Country"/>     */}
-      <input value="Next" type="submit"/>    
+      <div className="subscription-container">          
+      <span className="packlabel">Value Pack</span>
+        <div className="value-pack">
+            <label>
+                <input type="checkbox" ref={register} name="kids12class" />
+                KIDS Dance Package - 12 classes for 139$     
+            </label>
+            <label>
+                <input type="checkbox" ref={register} name="kids24class" />
+                ADULTS Dance Fitness - 24 classes for 105$      
+            </label>  
+            <label>
+               <input type="checkbox" ref={register} name="adults12class" />
+               ADULTS Fitness (Private) - 12 classes for 90$       
+            </label> 
+        </div>                
+      <span className="packlabel">Monthly Pack</span>
+        <div className="monthly-pack">
+            <label>
+               <input type="checkbox" ref={register} name="kids4class" />
+               KIDS Dance Package - 4 classes for 49$       
+            </label>   
+            <label>
+               <input type="checkbox" ref={register} name="adults8class" />
+               ADULTS Dance Fitness - 8 classes for 40$     
+            </label> 
+            <label>
+               <input type="checkbox" ref={register} name="adults10class" />
+               ADULTS Fitness (Private) - 10 classes for 120$       
+            </label>  
+        </div>
+      </div>
+      <input value="Submit" type="submit"/>    
       </form>
       </Animator>
     )

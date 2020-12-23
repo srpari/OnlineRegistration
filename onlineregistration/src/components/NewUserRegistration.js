@@ -7,15 +7,16 @@ import Subscription from './Subscription';
 
 function NewUserRegistration() {
      return (
-        <Router>
+         <Router>
           <div className="signup-container">
-          <StepLinks />         
-        <Switch>
+          <StepLinks /> 
+
+          <Switch>
           <Route exact path='/' component={PersonalDetails}></Route> 
           <Route path="/programs" component={Programs} ></Route>
           <Route path="/subscription" component={Subscription} ></Route>
-        </Switch>
-        </div>
+          </Switch>
+          </div>
         </Router> 
     )
 }

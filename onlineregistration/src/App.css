@@ -11,7 +11,6 @@
 * {
   box-sizing: border-box;
 }
-
 body {
   background-color: #302c27;
   font-family: "Merriweather", serif;
@@ -26,7 +25,6 @@ h1 {
   min-width: 500px;
   min-height: 500px;
   position: relative;
-  /* background-color: #eb9123; */
   padding-left: 20px;
   font-size: 18px;
 }
@@ -94,7 +92,7 @@ input[type="submit"] {
   display: block;
   position: absolute;
   height: 2px;
-  background: #d3ec2f;
+  background: #8b8d83;
   /* z-index: 1; */
   top: 43px;
   left: -10%;
@@ -102,6 +100,7 @@ input[type="submit"] {
 }
 
 .step-links a {
+  content: "❤️";
   display: inline-block;
   font-size: 16px;
   padding: 8px 10px;
@@ -113,30 +112,101 @@ input[type="submit"] {
   color: #7db491;
 }
 
-/* .step-links a.disabled {
-  pointer-events: none;
-} */
-
 .step-links a:hover {
   color: #4d9869;
 }
 
-.step-links a.active {
-  color: #215735;
+.step-links .active {
+  color: #a5f3bf;
 }
 
-.step-links a.active span {
-  background: #215735;
+.step-links .active span {
+  background: #f5b326;
 }
-
 /* the little circle */
-.step-links a span {
+.step-links span {
   display: block;
   position: absolute;
-  top: 32px;
+  top: 33px;
   height: 8px;
   width: 8px;
   border-radius: 50%;
-  background: #b2dec2;
+  background: #a4d6e2;
   z-index: 2;
+}
+
+/* For Programs Step */
+.programs-container {
+  display: flex;
+  flex-direction: column;
+  padding-left: 20px;
+  min-width: 300px;
+  min-height: 300px;
+}
+
+input[type="checkbox"] {
+  position: relative;
+  cursor: pointer;
+  margin-right: 40px;
+  align-items: right;
+}
+input[type="checkbox"]:before {
+  content: "";
+  position: absolute;
+  width: 16px;
+  height: 16px;
+  bottom: -5px;
+  left: 0;
+  border: 2px solid #555555;
+  border-radius: 3px;
+  background-color: #fff;
+}
+input[type="checkbox"]:checked:after {
+  content: "";
+  width: 5px;
+  height: 10px;
+  border: solid #000;
+  border-width: 0 2px 2px 0;
+  transform: rotate(45deg);
+  position: absolute;
+  top: 0px;
+  left: 6px;
+}
+label {
+  display: flex;
+  text-align: left;
+  margin: 10px;
+}
+
+/* For Subscription */
+.subscription-container {
+  display: flex;
+  flex-direction: column;
+  max-width: 400px;
+  place-items: center;
+}
+
+.value-pack {
+  display: flex;
+  flex-wrap: wrap;
+  width: 450px;
+  border: 1px solid #42423f;
+  margin-bottom: 10px;
+}
+
+.value-pack:hover,
+.monthly-pack:hover {
+  background-color: #d6b14b;
+}
+
+.packlabel {
+  position: relative;
+  margin: 10px;
+}
+
+.monthly-pack {
+  display: flex;
+  flex-wrap: wrap;
+  width: 450px;
+  border: 1px solid #42423f;
 }
