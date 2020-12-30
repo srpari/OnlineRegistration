@@ -1,5 +1,5 @@
 .App {
-  background: #181a19;
+  background: #fff;
   min-height: 100vh;
   display: flex;
   flex-direction: column;
@@ -12,13 +12,14 @@
   box-sizing: border-box;
 }
 body {
-  background-color: #302c27;
+  /* background-color: #302c27; */
   font-family: "Merriweather", serif;
-  color: #b2b6b9;
+  color: #1e8db9;
 }
 
 h1 {
   font-size: 45px;
+  font-family: cursive;
   margin-left: 30px;
 }
 .signup-container {
@@ -31,7 +32,7 @@ h1 {
 
 form {
   color: #000;
-  background: #eb9123;
+  background: #aad576;
   border-radius: 30px;
   padding: 30px;
   min-width: 500px;
@@ -52,14 +53,16 @@ form p {
 
 input[type="submit"] {
   color: #fff;
-  background: rgb(41, 39, 39);
+  background: #cc5803;
   font-size: 26px;
+  width: 45%;
 }
 
 input[type="text"],
 input[type="email"] {
   background-color: #fff;
   font-size: 16px;
+  width: 95%;
 }
 
 input[type="text"],
@@ -70,7 +73,7 @@ input[type="submit"] {
   margin: 8px;
   outline: none;
   padding: 18px;
-  width: 95%;
+  /* width: 95%; */
   transition: 0.5s ease all;
   font-family: "Merriweather", serif;
 }
@@ -92,7 +95,7 @@ input[type="submit"] {
   display: block;
   position: absolute;
   height: 2px;
-  background: #8b8d83;
+  background: #ff9505;
   /* z-index: 1; */
   top: 43px;
   left: -10%;
@@ -100,7 +103,6 @@ input[type="submit"] {
 }
 
 .step-links a {
-  content: "❤️";
   display: inline-block;
   font-size: 16px;
   padding: 8px 10px;
@@ -109,48 +111,36 @@ input[type="submit"] {
   text-decoration: none;
   cursor: pointer;
   position: relative;
-  color: #7db491;
+  color: #b7a7bb;
 }
 
 .step-links a:hover {
-  color: #4d9869;
+  color: #806a77;
 }
 
 .step-links .active {
-  color: #a5f3bf;
+  color: #0b0e0c;
 }
 
 .step-links .active span {
   background: #f5b326;
 }
-/* the little circle */
-.step-links span {
-  display: block;
-  position: absolute;
-  top: 33px;
-  height: 8px;
-  width: 8px;
-  border-radius: 50%;
-  background: #a4d6e2;
-  z-index: 2;
-}
 
-/* For Programs Step */
-.programs-container {
-  display: flex;
-  flex-direction: column;
-  padding-left: 20px;
-  min-width: 300px;
-  min-height: 300px;
-}
-
-input[type="checkbox"] {
+input[type="radio"] {
   position: relative;
   cursor: pointer;
   margin-right: 40px;
   align-items: right;
+  background-color: #000;
 }
-input[type="checkbox"]:before {
+input[type="radio"]:before {
+  color: #000;
+}
+input[type="radio"]:checked:after {
+  content: "";
+  color: #000;
+}
+/* input[type="radio"]:before {
   content: "";
   position: absolute;
   width: 16px;
@@ -161,17 +151,17 @@ input[type="checkbox"]:before {
   border-radius: 3px;
   background-color: #fff;
 }
-input[type="checkbox"]:checked:after {
+input[type="radio"]:checked:after {
   content: "";
   width: 5px;
   height: 10px;
   border: solid #000;
-  border-width: 0 2px 2px 0;
-  transform: rotate(45deg);
+  border-width: 1px 1px 1px 1px;
+  transform: rotate(180deg);
   position: absolute;
-  top: 0px;
+  top: 2px;
   left: 6px;
-}
+} */
 label {
   display: flex;
   text-align: left;
@@ -179,24 +169,12 @@ label {
 }
 
 /* For Subscription */
-.subscription-container {
+.subscription-container,
+.programs-container {
   display: flex;
   flex-direction: column;
   max-width: 400px;
   place-items: center;
-}
-
-.value-pack {
-  display: flex;
-  flex-wrap: wrap;
-  width: 450px;
-  border: 1px solid #42423f;
-  margin-bottom: 10px;
-}
-
-.value-pack:hover,
-.monthly-pack:hover {
-  background-color: #d6b14b;
 }
 
 .packlabel {
@@ -204,9 +182,10 @@ label {
   margin: 10px;
 }
 
-.monthly-pack {
+.monthly-pack,
+.programsdiv {
   display: flex;
   flex-wrap: wrap;
   width: 450px;
-  border: 1px solid #42423f;
+  /* border: 1px solid #42423f; */
 }

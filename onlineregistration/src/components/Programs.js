@@ -1,44 +1,44 @@
 import React, { useContext } from 'react'
 import { useForm } from 'react-hook-form';
 import Animator from './Animator';
-
-
+import { useHistory } from 'react-router-dom';
 import { NewRegistrationContext } from './NewRegistrationContext';
 
 function Programs() {
-  const { personal } = useContext(NewRegistrationContext);
-    const { register, handleSubmit, errors } = useForm();
-    
+  // const { personal } = useContext(NewRegistrationContext);
+  const { setPrograms } =  useContext(NewRegistrationContext);
+  
+  const history = useHistory();
+    const { register, handleSubmit, errors, watch } = useForm();
+    const watchAllFields = watch(); 
+
     function onSubmit(data) {
-     console.log("i am here inprogramss  "+JSON.stringify(data) )
+      // setPrograms(data);      
+      history.push('/subscription');
+      // console.log("i am here in programss  "+JSON.stringify(data));
+      setPrograms(watchAllFields.program)
     }
+
     return (
       <Animator>
       <form onSubmit={handleSubmit(onSubmit)} noValidate>
-        {personal.name}
-      <div className="programs-container">   
+      <div className="programs-container">
+      <div className="programsdiv">  
       <label>
-      <input type="checkbox" ref={register} name="kidsbeginner" />
-      KIDS DANCE - Beginner         
+      <input type="radio" ref={register} value="Kids" name="program" />
+      KIDS DANCE - Beginner        
       </label>
       <label>
-        <input type="checkbox" ref={register} name="kidsintermediate" />
-        KIDS DANCE - Intermediate           
+        <input type="radio" ref={register} value="Kids" name="program" />
+        KIDS DANCE - Intermediate      
       </label>
       <label>
-        <input type="checkbox" ref={register} name="adultsbeginner" />
-        ADULTS DANCE - Beginner
-      </label>
-      <label>
-         <input type="checkbox" ref={register} name="adultsdancefit" />
+         <input type="radio" ref={register} value="Adults" name="program" />
          ADULTS DANCE FITNESS           
-      </label>
-      <label>
-          <input type="checkbox" ref={register} name="adultsdanceprivate" />
-          ADULT DANCE FITNESS (Private)
-      </label>
+      </label>    
+      </div>    
+      </div>     
       <input value="Next" type="submit"/> 
-      </div>  
       </form>
       </Animator>
     )

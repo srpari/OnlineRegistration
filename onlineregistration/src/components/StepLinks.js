@@ -1,30 +1,55 @@
-import React from 'react';
+import React, { useContext }  from 'react';
 import { NavLink } from 'react-router-dom';
+import { NewRegistrationContext } from './NewRegistrationContext.js';
 
+function isEmpty(obj) {
+  return Object.keys(obj).length === 0;
+}
 export default function StepLinks() {  
+  const {personal,programs,subscription} = useContext(NewRegistrationContext);
+
+  const isPersonalDone = !isEmpty(personal);  
+  const isProgramsDone = !isEmpty(programs);  
+  const isSubscriptionDone = !isEmpty(subscription);
 
   return (
     <div className="step-links">
-      <NavLink to="/" exact>
-        <a>
-        PersonalDetails<span />
-        </a>
-        
+
+       <NavLink to="/" exact>
+        {isPersonalDone ? '❤️' : '🤍'} Personal Details <span />
       </NavLink>
-      
+
+      {isPersonalDone ? (
         <NavLink to="/programs">
-        <a>
-        Programs<span />
-        </a>
-        
+          {isProgramsDone ? '❤️' : '🤍'} Programs <span />
         </NavLink>
-    
-        <NavLink to="/subscription">
-        <a>
-        Subscription<span />
+      ) : (
+        <a href=" ">
+          Programs <span />
         </a>
-        
-        </NavLink>     
+      )}
+
+      {isPersonalDone && isProgramsDone ? (
+        <NavLink to="/subscription">
+          {isSubscriptionDone ? '❤️' : '🤍'} Subscription <span />
+        </NavLink>
+      ) : (
+        <a href=" ">
+          Subscription <span />
+        </a>
+      )}
+
+
+      {isPersonalDone && isProgramsDone && isSubscriptionDone ? (
+        <NavLink to="/review" style={{ float: 'right' }}>
+        ❤️  Review <span />
+        </NavLink>
+      ) : (
+        <a href=" " style={{ float: 'right' }}>
+          Review <span />
+        </a>
+      )}
+ 
     </div>
   );
 }
