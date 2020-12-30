@@ -12,8 +12,8 @@ function Subscription() {
     const history = useHistory();
     const watchAllFields = watch(); 
     function onSubmit(data) {     
-      history.push('/review');
       setSubscription(watchAllFields.subpackage)
+      history.push('/review');
     }
     return (
       <Animator>
