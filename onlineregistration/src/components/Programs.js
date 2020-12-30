@@ -9,7 +9,7 @@ function Programs() {
   const { setPrograms } =  useContext(NewRegistrationContext);
   
   const history = useHistory();
-    const { register, handleSubmit, errors, watch } = useForm();
+    const { register, handleSubmit, watch } = useForm();
     const watchAllFields = watch(); 
 
     function onSubmit(data) {

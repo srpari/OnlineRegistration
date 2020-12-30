@@ -14,7 +14,7 @@ const PersonalDetails = () => {
     function onSubmit(data) {
      setPersonal(data);     
      history.push('/programs');
-     console.log("i am here  "+JSON.stringify(data) )
+    //  console.log("i am here  "+JSON.stringify(data) )
     }
 
     return ( 

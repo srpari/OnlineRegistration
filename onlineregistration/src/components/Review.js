@@ -32,7 +32,7 @@ export default function Review() {
         <p>
           <strong>Subscription</strong>: {subscription}
         </p>
-        <input type="submit" value="Submit All Info" />
+        <input type="submit" value="Submit" />
       </form>
     </Animator>
   );
