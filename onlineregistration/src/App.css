@@ -133,14 +133,15 @@ input[type="radio"] {
   align-items: right;
   background-color: #000;
 }
-input[type="radio"]:before {
-  color: #000;
+
+input[type="checkbox"] {
+  position: relative;
+  cursor: pointer;
+  margin-right: 40px;
+  align-items: right;
+  background-color: #000;
 }
-input[type="radio"]:checked:after {
-  content: "";
-  color: #000;
-}
-/* input[type="radio"]:before {
+input[type="checkbox"]:before {
   content: "";
   position: absolute;
   width: 16px;
@@ -151,17 +152,19 @@ input[type="radio"]:checked:after {
   border-radius: 3px;
   background-color: #fff;
 }
-input[type="radio"]:checked:after {
+
+input[type="checkbox"]:checked:after {
   content: "";
   width: 5px;
   height: 10px;
   border: solid #000;
-  border-width: 1px 1px 1px 1px;
-  transform: rotate(180deg);
+  border-width: 0px 2px 0px 2px;
+  transform: rotate(45deg);
   position: absolute;
   top: 2px;
   left: 6px;
-} */
+}
+
 label {
   display: flex;
   text-align: left;

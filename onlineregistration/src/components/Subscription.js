@@ -20,7 +20,7 @@ function Subscription() {
       <form onSubmit={handleSubmit(onSubmit)} noValidate>            
       <div className="subscription-container">          
           <div className="monthly-pack">
-           {programs[0]=="Kids" && (
+           {programs=="Kids" && (
            <>
            <label>
                <input type="radio" ref={register} value="KIDS Dance Package - 4 classes for 49$" name="subpackage" />
@@ -31,7 +31,7 @@ function Subscription() {
                 KIDS Dance Package - 12 classes for 139$     
             </label> </>
             )}
-           {programs[0]!="Kids" && (
+           {programs!="Kids" && (
            <> 
             <label>
                <input type="radio" ref={register} value="ADULTS Dance Fitness - 8 classes for 99$" name="subpackage" />
