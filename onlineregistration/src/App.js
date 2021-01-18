@@ -7,10 +7,7 @@ function App() {
     
     <Router>
     <div className="App">
-       {/* <motion.h1 
-         animate={{x: 10, y: -10}}> */}
          <h1> Dance workout Registration</h1> 
-            {/* </motion.h1> */}
              <NewUserRegistration/>
     </div>
     </Router> 
