@@ -30,7 +30,7 @@ const PersonalDetails = () => {
         defaultValue={personal.mobileno}
         ref={register({ required: true })}/>
         <p>{errors.mobileno && 'Mobile number is required.'}</p>
-        <input type="text" name="email" type="email" 
+        <input name="email" type="email" 
         placeholder="Email ID"                
         defaultValue={personal.email}
         ref={register({ required: true })}/>
